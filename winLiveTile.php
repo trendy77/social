@@ -6,10 +6,11 @@
 /**
  *
  */
-function liveTile($identifier) {
-	$url = $GLOBALS['url'];
+function liveTile() {
+		$url = home_url();				
+	
 
-	$picpath = '/home/organ151/public_html/ombiz/' . $identifier . '/live/';
+	$picpath = '/home/organ151/public_html/ombiz/' . get_option('IDENTIFIER') . '/live/';
 
 	echo '<meta name="application-name" content="' . $GLOBALS['name'] . '"/><meta name="msapplication-square70x70logo" content="' . $picpath . 'small.jpg"/>
 	<meta name="msapplication-square150x150logo" content="' . $picpath . 'medium.jpg"/><meta name="msapplication-wide310x150logo" content="' . $picpath . 'wide.jpg"/>
