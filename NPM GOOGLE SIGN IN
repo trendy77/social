@@ -1,0 +1,38 @@
+Installation
+
+npm install google-sign-in
+Example Usage
+
+// Initialize a project 
+ 
+var GoogleSignIn = require('google-sign-in');
+var project = new GoogleSignIn.Project('your-client-id.apps.googleusercontent.com', 'your-other-client-id.apps.googleusercontent.com');
+ 
+// Verify a token 
+ 
+project.verifyToken('token').then((jsonData) => {
+    console.log(JSON.stringify(jsonData)); // Does not execute 
+}, (error) => {
+    console.error(error.message); // Logs 'Invalid Value' 
+});
+Documentation
+
+Project - Class
+constructor(clientIds) - constructor - Creates a new Project with the specified clientIds
+clientIds - required string... - Valid client IDs from the Google Developers project seperated by commas or an array
+verifyToken(idToken) - function - Verifies an ID token
+idToken - required string - The ID token to verify
+returns a promise
+Rejects with an error object if an error occurs
+Resolves with a JSON object if everything goes well
+Documentation on this object can be found here.
+clientIds - string[] - List of client IDs
+Purpose
+
+Making authenticating with Google sign-in easier.
+
+Contributions
+
+To submit issues, use the GitHub issue tracker. To submit code, use a pull request, found here. To issue a private vulnerability report, email a contributor.
+
+CII Best Practices, bitHound standards, Synk, and Jacks standards should b
