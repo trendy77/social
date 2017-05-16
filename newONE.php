@@ -3,23 +3,26 @@
 add_action( 'init', 'myGodDamnAutoPost' );
 
 function myGodDamnAutoPost(){
-require('/home/organ151/Scripts/APost.php');
+require('APost.php');
 	if( isset( $_POST['identifier'] ) ) {
-    	prepPost($GLOBALS['IDENTIFIER'])
+    	
 		$auth = get_current_user_id();
+		prepPost($auth);
 		
 	if (!isset($_POST['tags'])) {
 		$tags = get_hashTags($_POST['articleUrl']);
 	}
-		$postID = createPost($_POST['title'],$_POST['content'],$_POST['categories'],$_POST['source'],$tags);
+		
+	$postID = createPost($_POST['title'],$_POST['content'],$_POST['categories'],$_POST['source'],$tags);
 
 	if (isset($_POST['image'])) {
 		$imgUp = saveImage($_POST['image']);
-		uploadAttachImage($imgUp, $postID)
+		uploadAttachImage($imgUp, $postID);
 		}	
 	}
 	}
 
+	
 function get_hashTags( $aurl ) {
 	echo $tags = call_api( $aurl );
  }

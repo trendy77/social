@@ -1,32 +1,28 @@
 <?php
-require_once ( '/home/ckww/AP/IXRlib.php' );
 
 class autoPost
 {
-	private $_id;
-	private $_user;
-	private $_path;
-	private $_url;
-	private $_title;
-	private $_content;
-	private $_tags;
-	private $_categories;
-	private $_excerpt;
-	private $_postData = array();
+//	private $id;
+	//private $user;
+//	private $path;
+	//private $url;
+//	private $title;
+//	private $body;
+//	private $post_tags;
+//	private $category;
+//	private $post_excerpt;
+//	private $myPost = array();
 	
-	public function prepPost($GLOBALS['IDENTIFIER'])
-	{
-	 if (!isset($GLOBALS['IDENTIFIER'])) {
-	    echo 'could not find identifier ';
-	    }
-			$this->_id = $GLOBALS['IDENTIFIER'];
-			$this->_user = $GLOBALS['USER'];
-			$this->_path = $GLOBALS['PATH'];
-			$this->_url = $_SERVER['SERVER_NAME'];
-	}
-
 	public function createPost($title,$body,$category,$source,$tags)
 	{
+	if (get_option('IDENTIFIER') =! false) {
+	    echo 'could not find identifier ';
+	    } else {
+			$id = get_option('IDENTIFIER');
+			$user = get_current_user_id();
+			$path =get_option('PATH');
+			$url = $_SERVER['SERVER_NAME'];
+		}
 	//	$customfields=array('key'=>'sourceFeed', 'value'=>$source); // Custom field
 		$title = htmlentities($title,ENT_NOQUOTES,$encoding);
 		$post_tags = htmlentities($tags,ENT_NOQUOTES,$encoding); 
@@ -37,16 +33,17 @@ class autoPost
              'description'=>$body,
              'mt_allow_comments'=>0,
              'post_type'=>'post',	
-			 'post_status'   => 'publish',
-             'post_tags'=>$tags,
+			 'post_status'  => 'publish',
+             'post_excerpt' => $post_excerpt,
+			 'post_tags'=>$post_tags,
              'categories'=>array($category),
 			// 'custom_fields' => array($customfields),
              );
 			 
 			$post_id = wp_insert_post($myPost, $wp_error);
 			
-			wp_set_post_tags( $post_id, $tags, 'true' );
-			wp_set_post_categories( $post_id, $category, 'true' );
+			wp_set_post_tags( $post_id, $post_tags, true );
+			wp_set_post_categories( $post_id, $category, true );
 	
 		return $post_id;
 	}
