@@ -33,4 +33,4 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 
 // User is logged in!
 // You can redirect them to a members-only page.
-//header('Location: https://example.com/members.php');
+header('Location: https://example.com/specialoffers/members.php');

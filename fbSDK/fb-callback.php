@@ -1,8 +1,8 @@
 <?php
 
 $fb = new Facebook\Facebook([
-  'app_id' => $GLOBALS['fbappid'],
-  'app_secret' => $GLOBALS['fbscrt'],
+  'app_id' => get_option('fbappid'),
+  'app_secret' => get_option('fbscrt'),
   'default_graph_version' => 'v2.9',
   ]);
 
