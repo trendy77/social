@@ -20,8 +20,9 @@ curl -k -v -X POST https://api.private-beta-1.pusherplatform.com:443/apps/<app_i
 echo '<a href="https://twitter.com/intent/tweet?screen_name=' . $accTwee . '" class="twitter-mention-button" data-show-count="true">Tweet to @' . $accTwee . '</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>';
 	
 	// FOLLOW BUTTONS
+	https://twitter.com/intent/follow?original_referer=https%3A%2F%2F  .   .  %2Freference%2Ffunctions%2Fget_option%2F&ref_src=twsrc%5Etfw&region=follow_link&screen_name= .   . &tw_p=followbutton
 // param @ ---- myAcc
-	echo '<a class="twitter-follow-button" href="https://twitter.com/' . $myAcc . '"> Follow @' . $myAcc . '</a>';
+	echo '<a class="twitter-follow-button" href="https://twitter.com/' . get_option('twitRl') . '"> Follow @' . get_option('') . '</a>';
 
 
 // JAVASCRIPT LIB FOR TWEET EMBEDDING'
@@ -74,6 +75,17 @@ Access token URL	https://api.twitter.com/oauth/access_token
 
 
 
+
+organisemybizbot
+Access Token 754663243465891840-FFZjZRlOT84GY0YTvoKugAkMcwW7YeT
+Access Token Secret 8mQiNYUIMGiCTqifFEiMJBIIrJkPLvd5ZybFFUdas1hhZ
+Access Level Read and write
+Owner OrganiseMyBiz
+Owner ID 754663243465891840
+ Consumer Key (API Key) wTU8Ntmn3q5nN7OrwdXfBn7Xx
+Consumer Secret (API Secret) fqlbIEnIHY4fEBmVoPnqIV7j5JN6doDuh4QLEVLjGmLb59jg9N 
+
+
 //TWITTER API BUTTONS
 
 Grid template
@@ -85,6 +97,11 @@ Visit publish.twitter.com to generate embed HTML for list templates backed by us
 For list templates backed by a search query, visit the search timeline widget configurator on twitter.com. We recommend creating a new widget from the account responsible for your website (not your personal account) for easy discovery by your team and customization as your site changes.
 
 The HTML snippet generated in our widget tools includes a
+
+
+
+
+
 
 //for android
 nclude the library using Gradle by adding the following to your application's build.gradle file:

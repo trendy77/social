@@ -15,10 +15,10 @@ class autoPost
 	
 	public function createPost($title,$body,$category,$source,$tags)
 	{
-	if (get_option('IDENTIFIER') =! false) {
+	if (get_option('IDENTIFIER') ==! false) {
 	    echo 'could not find identifier ';
 	    } else {
-			$id = get_option('IDENTIFIER');
+			$id = $GLOBALS('IDENTIFIER');
 			$user = get_current_user_id();
 			$path =get_option('PATH');
 			$url = $_SERVER['SERVER_NAME'];

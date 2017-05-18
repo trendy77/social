@@ -1,142 +1,88 @@
+<?php
 
+//add_action( 'init', 'getDeets' );
+//get_option('site_domain')
+	
+// function getDeets(){
 
-// $option 		(string) (required) Name of the option to update. Must not exceed 64 characters. A list of valid default options to update can be found at the Option Reference.
-					//Default: None
-// $newvalue 		(mixed) (required) The NEW value for this option name. This value can be an integer, string, array, or object.
-					//Default: None
-// $autoload		//(mixed) (optional) Whether to load the option when WordPress starts up. For existing options `$autoload` can only be updated using `update_option()` if `$value` is also changed. Accepts 'yes' or true to enable, 'no' or false to disable. For non-existent options, the default value is 'yes'.
-				//	Default: null
+echo $url = 'http://organisemybiz.com';	
 
-				
-				//add_action( 'init', 'getDeets' );
-
+	switch ($GLOBALS['IDENTIFIER']){
 	
-function getDeets(){
-	
-	$url = $_SERVER['SERVER_NAME'];				
-	
-	switch ($url){
-	
-	case 'http://trendypublishing.com':
-	
-update_option( 'fbappid', '1209167032497461','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-update_option( 'gappsTag', 'UA-84079763-11','yes' );
-update_option( 'UTM', 'closed','yes' );
-	break;
-	
-	case 'http:///trendypublishing.com.au':
-	
-update_option( 'fbappid', '1209167032497461','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-
-//same?
-update_option( 'gappsTag', 'UA-84079763-11','yes' );
-update_option( 'UTM', 'closed','yes' );
-	break;
-	
-	
-	case 'http://es.organisemybiz.com':
-	
-update_option( 'fbappid', '1209167032497461','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-update_option( 'gappsTag', 'UA-84079763-10','yes' );
-update_option( 'UTM', 'closed','yes' );
-	break;
-	
-	
-	
-	case 'organisemybiz.com':
-	update_option( 'IDENTIFIER', 'orgbiz','yes' );
-update_option( 'fbappid', '1209167032497461','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-update_option( 'gappsTag', 'UA-84079763-5','yes' );
-update_option( 'UTM', 'closed','yes' );
+	case 'orgbiz':
+		// fb app info
+	update_option( 'fbappid', '1209167032497461','yes' );
+	update_option( 'fbappRl','OrganiseBiz');
+update_option( 'fbscrt', '5582cae3fbe217a121285381cbdf007c','yes' );
+update_option( 'fbcltk', '45cb15817ca66a934d5923eea736ec43','yes');		// twitter from https://dev.twitter.com 
+	update_option('twitRl', 'organisemybiz','yes');
+	update_option( 'twitcnkey', "wTU8Ntmn3q5nN7OrwdXfBn7Xx" ,'yes');
+	update_option( 'twitcnsrt', "fqlbIEnIHY4fEBmVoPnqIV7j5JN6doDuh4QLEVLjGmLb59jg9N" ,'yes');
+	update_option( 'twitkey', "754663243465891840-FFZjZRlOT84GY0YTvoKugAkMcwW7YeT" ,'yes');
+	update_option( 'twitscrt', "8mQiNYUIMGiCTqifFEiMJBIIrJkPLvd5ZybFFUdas1hhZ",'yes' );
+			// gapps
+	update_option( 'gappsTag', 'UA-84079763-3','yes' );
+//	update_option( 'UTM', 'closed','yes' );
 
 	break;
 	
+		case 'orgbizes':
+	update_option( 'gappsTag', 'UA-84079763-10','yes' );
+	update_option( 'fbappid', '1209167032497461','yes' );
+	update_option( 'fbappRl','OrganiseBiz');
+		update_option( 'fbscrt', '5582cae3fbe217a121285381cbdf007c','yes' );
+		update_option('twitRl', 'organisemybiz');
+	update_option( 'twitcnkey', "wTU8Ntmn3q5nN7OrwdXfBn7Xx" ,'yes');
+	update_option( 'twitcnsrt', "fqlbIEnIHY4fEBmVoPnqIV7j5JN6doDuh4QLEVLjGmLb59jg9N" ,'yes');
+	update_option( 'twitkey', "754663243465891840-FFZjZRlOT84GY0YTvoKugAkMcwW7YeT" ,'yes');
+	update_option( 'twitscrt', "8mQiNYUIMGiCTqifFEiMJBIIrJkPLvd5ZybFFUdas1hhZ",'yes' );
+	break;
 	
 	
-	case 'http://vapedirectory.co':
+	case 'tp':
+	
+update_option( 'fbappid', '1209167032497461','yes' );
+
+update_option( 'gappsTag', 'UA-84079763-14','yes' );
+//update_option( 'UTM', 'closed','yes' );
+	break;
+	
+	
+	case 'tpau':
+	
+update_option( 'fbappid', '1209167032497461','yes' );
+update_option( 'gappsTag', 'UA-84079763-15','yes' );
+
+
+	break;
+	
+	
+	
+	case 'vape':
 	
 update_option( 'fbappid', '1829696163961982','yes' );
 update_option( 'fbscrt', 'closed','yes' );
 update_option( 'gappsTag', 'UA-84079763-9','yes' );
-update_option( 'UTM', 'closed','yes' );
+//update_option( 'UTM', 'closed','yes' );
 	break;
 	
-	case 'http://globetravelsearch.com':
+	case 'glo':
 update_option( 'fbappid', '232122247192377','yes' );
-update_option( 'fbscrt', 'closed','yes' );
+update_option( 'fbscrt', '598188680454c7e4fe3ace0d5267ed1d','yes' );
+update_option( 'fbcltk', '6013598acf467d04ee5115b4a27421de');
 update_option( 'gappsTag', 'UA-84079763-13','yes' );
-update_option( 'UTM', 'closed','yes' );
+//update_option( 'UTM', 'closed','yes' );
 	break;
 	
-	case 'http://govnews.info':
+	case 'gov':
 	
 update_option( 'fbappid', '1645038759139286','yes' );
 update_option( 'fbscrt', 'closed','yes' );
 update_option( 'gappsTag', 'UA-84079763-8','yes' );
-update_option( 'UTM', 'closed','yes' );
+//update_option( 'UTM', 'closed','yes' );
 	break;
 
-	case 'http://customkitsworldwide.com':
-		
-update_option( 'fbappid', '1863943023885616','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-update_option( 'gappsTag', 'UA-85225777-1','yes' );
-update_option( 'UTM', 'closed','yes' );
 
-	break;
-	case 'http://es.customkitsworldwide.com':
-	
-update_option( 'fbappid', '1863943023885616','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-update_option( 'gappsTag', 'closed','yes' );
-update_option( 'UTM', 'closed','yes' );
-
-	break;
-		
-	case 'http://fakenewsregistry.org/es':
-	// dev deets @ TRUTHINEWS - pusher
-  update_option( 'pushrappid', "339212");
-  update_option( 'pushrkey', "3d10ef4455f46d0aa5b0",'yes' );
-  update_option( 'pushrscrt', "872e998ae796efb76f40",'yes' );
-		// truthinews twitter app
-  update_option( 'twitcnkey', "2vOkc55DN1UbX6NJjJawC7UNM" ,'yes');
-  update_option( 'twitcnsrt', "tcXIP5xPmXqNRgmiLLBVoEfY1hyKiAaDhhbi4bzrmbB3Urdl6V" ,'yes');
-  update_option( 'twitkey', "817542417788194816-RpuUbfOb3j8hm5v0HRny4XcQ4Ffv0Lq" ,'yes');
-update_option( 'twitscrt', "6NL6sJ30NN14L36GiODkA69yvn352hnQtkCtttItGAeI5",'yes' );
-		// fb app info
-update_option( 'fbappid', '1883167178608105','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-		// gapps
-update_option( 'gappsTag', 'UA-84079763-6','yes' );
-update_option( 'UTM', 'closed','yes' );
-		// autopost?
-update_option( 'IDENTIFIER', 'fnres','yes' );
-	break;
-	
-	case 'http://fakenewsregistry.org':
-// dev deets @ TRUTHINEWS - pusher
-  update_option( 'pushrappid', "339212");
-  update_option( 'pushrkey', "3d10ef4455f46d0aa5b0",'yes' );
-  update_option( 'pushrscrt', "872e998ae796efb76f40",'yes' );
-		// truthinews twitter app
-  update_option( 'twitcnkey', "2vOkc55DN1UbX6NJjJawC7UNM" ,'yes');
-  update_option( 'twitcnsrt', "tcXIP5xPmXqNRgmiLLBVoEfY1hyKiAaDhhbi4bzrmbB3Urdl6V" ,'yes');
-  update_option( 'twitkey', "817542417788194816-RpuUbfOb3j8hm5v0HRny4XcQ4Ffv0Lq" ,'yes');
-update_option( 'twitscrt', "6NL6sJ30NN14L36GiODkA69yvn352hnQtkCtttItGAeI5",'yes' );
-		// fb app info
-update_option( 'fbappid', '1883167178608105','yes' );
-update_option( 'fbscrt', 'closed','yes' );
-		// gapps
-update_option( 'gappsTag', 'UA-84079763-11','yes' );
-update_option( 'UTM', 'closed','yes' );
-		// autopost?
-update_option( 'IDENTIFIER', 'fnr','yes' );
-	break;
-			
 }
 
 
