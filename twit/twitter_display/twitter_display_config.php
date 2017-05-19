@@ -12,23 +12,23 @@
 // You MUST fill this in with the correct URL for the 140dev code
 // For example, if the code is at http://mydomain.com/twitter_display/
 // change to define('AJAX_URL', 'http://mydomain.com/twitter_display/');
-define('AJAX_URL', '*****');
+define('AJAX_URL', 'https://organisemybiz.com/twit_display/');
 
 // Number of tweets displayed when the tweet list is first displayed
 // and when the View More button is clicked
 define('TWEET_DISPLAY_COUNT', 30);
 
 // Text for View More button
-define ('MORE_BUTTON', 'tweets displayed - View More');
+define ('MORE_BUTTON', 'tweets shown - View More');
 
 // Title for hashtag links
-define('HASHTAG_TITLE', 'View tweets for tag: ');
+define('HASHTAG_TITLE', 'View tweets for HashTag: #');
 
 // Title for user mention links
 define('USER_MENTION_TITLE', 'View tweets by user: ');
 
 // Title for tweet date
-define('TWEET_DISPLAY_TITLE', 'View this tweet on Twitter.com');
+define('TWEET_DISPLAY_TITLE', 'View on Twitter.com');
 
 // Number of seconds between checking server for new tweet count
 define('NEW_COUNT_REFRESH', 30);
