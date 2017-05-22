@@ -32,7 +32,7 @@ class tmhOAuth {
       array(
         // leave 'user_agent' blank for default, otherwise set this to
         // something that clearly identifies your app
-        'user_agent'                 => '',
+        'user_agent'                 => 'truthiNews',
         // default timezone for requests
         'timezone'                   => 'UTC',
 
